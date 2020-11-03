@@ -51,13 +51,13 @@ export class Player {
         this.matchLosses = data.segments[0].stats.losses.value;
         this.matchTies = data.segments[0].stats.ties.value;
         this.matchWinRate = this.matchWins / this.matchesPlayed;
-        this.matchLossRate = this.matchesPlayed / this.matchLosses;
-        this.matchTieRate = this.matchesPlayed / this.matchTies;
+        this.matchLossRate = this.matchLosses / this.matchesPlayed;
+        this.matchTieRate = this.matchTies / this.matchesPlayed;
         this.roundsPlayed = data.segments[0].stats.roundsPlayed.value;
         this.roundWins = data.segments[0].stats.roundsWon.value;
         this.roundLosses = this.roundsPlayed - this.roundWins;
-        this.roundWinRate = this.roundsPlayed / this.roundWins;
-        this.roundLossRate = this.roundsPlayed / this.roundLosses;
+        this.roundWinRate = this.roundWins / this.roundsPlayed;
+        this.roundLossRate = this.roundLosses / this.roundsPlayed;
 
         this.playtime = data.segments[0].stats.timePlayed.value;
     }
