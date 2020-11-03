@@ -10,7 +10,7 @@ You can now follow the example below.
 
 ### Example
 ```ts
-import { Stats, Player, Playtime } from 'https://deno.land/x/csgo_stats@v1.0.0/mod.ts';
+import { Stats, Player, Playtime } from 'https://deno.land/x/csgo_stats@v1.1.0/mod.ts';
 
 const stats: Stats = new Stats({
     apiKey: 'api-key'
