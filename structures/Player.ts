@@ -20,16 +20,18 @@ export class Player {
     public matchWins: number;
     public matchLosses: number;
     public matchTies: number;
-    public matchWinPercentage: number;
+    public matchWinRate: number;
+    public matchLossRate: number;
+    public matchTieRate: number;
     public roundsPlayed: number;
     public roundWins: number;
     public roundLosses: number;
-    public roundWinPercentage: number;
+    public roundWinRate: number;
+    public roundLossRate: number;
 
     private readonly playtime: number;
 
     constructor(data: any) {
-        // Public properties
         this.kills = data.segments[0].stats.kills.value;
         this.deaths = data.segments[0].stats.deaths.value;
         this.kdRatio = this.kills / this.deaths;
@@ -48,13 +50,15 @@ export class Player {
         this.matchWins = data.segments[0].stats.wins.value;
         this.matchLosses = data.segments[0].stats.losses.value;
         this.matchTies = data.segments[0].stats.ties.value;
-        this.matchWinPercentage = this.matchesPlayed / this.matchWins;
+        this.matchWinRate = this.matchWins / this.matchesPlayed;
+        this.matchLossRate = this.matchesPlayed / this.matchLosses;
+        this.matchTieRate = this.matchesPlayed / this.matchTies;
         this.roundsPlayed = data.segments[0].stats.roundsPlayed.value;
         this.roundWins = data.segments[0].stats.roundsWon.value;
         this.roundLosses = this.roundsPlayed - this.roundWins;
-        this.roundWinPercentage = this.roundsPlayed / this.roundWins;
+        this.roundWinRate = this.roundsPlayed / this.roundWins;
+        this.roundLossRate = this.roundsPlayed / this.roundLosses;
 
-        // Private properties
         this.playtime = data.segments[0].stats.timePlayed.value;
     }
 
