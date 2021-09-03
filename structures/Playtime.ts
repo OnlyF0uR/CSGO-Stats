@@ -1,5 +1,4 @@
 export class Playtime {
-
     private readonly seconds: number;
 
     constructor(seconds: number) {
